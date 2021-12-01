@@ -1,0 +1,12 @@
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\bin\Debug\net5.0\ProcessExcel.deps.json
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\bin\Debug\net5.0\ProcessExcel.dll
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\bin\Debug\net5.0\ref\ProcessExcel.dll
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\bin\Debug\net5.0\ProcessExcel.pdb
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\ProcessExcel.csproj.AssemblyReference.cache
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\ProcessExcel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\ProcessExcel.AssemblyInfoInputs.cache
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\ProcessExcel.AssemblyInfo.cs
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\ProcessExcel.csproj.CoreCompileInputs.cache
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\ProcessExcel.dll
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\ref\ProcessExcel.dll
+C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\ProcessExcel.pdb

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessExcel", "ProcessExcel\ProcessExcel.csproj", "{CF7C31FD-5791-4C19-91D5-C2B735D1CC83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientDocumentProcessor", "ClientDocumentProcessor\ClientDocumentProcessor.csproj", "{AE895ED7-334B-4535-8622-FBEAA6DF049F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF7C31FD-5791-4C19-91D5-C2B735D1CC83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7C31FD-5791-4C19-91D5-C2B735D1CC83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7C31FD-5791-4C19-91D5-C2B735D1CC83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7C31FD-5791-4C19-91D5-C2B735D1CC83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE895ED7-334B-4535-8622-FBEAA6DF049F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE895ED7-334B-4535-8622-FBEAA6DF049F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE895ED7-334B-4535-8622-FBEAA6DF049F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE895ED7-334B-4535-8622-FBEAA6DF049F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33DF92BF-B4C6-40CA-8E52-ADB26E9D6205}
+	EndGlobalSection
+EndGlobal
