@@ -9,7 +9,8 @@
       "ProcessExcel/1.0.0": {
         "dependencies": {
           "ExcelDataReader": "3.6.0",
-          "ExcelDataReader.DataSet": "3.6.0"
+          "ExcelDataReader.DataSet": "3.6.0",
+          "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
           "ProcessExcel.dll": {}
@@ -31,6 +32,14 @@
           "lib/netstandard2.0/ExcelDataReader.DataSet.dll": {
             "assemblyVersion": "3.6.0.0",
             "fileVersion": "3.6.0.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
           }
         }
       }
@@ -55,6 +64,13 @@
       "sha512": "sha512-miW3sWmPXnLM38YadRIfnhL4W4QZajpS6Q/OqsOpFJU5ct8h+M/fMpbGMm5INtsMP0Y1k0WK0stIfSW3RP31Xg==",
       "path": "exceldatareader.dataset/3.6.0",
       "hashPath": "exceldatareader.dataset.3.6.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     }
   }
 }

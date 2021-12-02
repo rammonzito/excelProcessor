@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProcessExcel
+﻿namespace ProcessExcel
 {
     public abstract class ExternalServiceFacade
     {
@@ -17,15 +11,25 @@ namespace ProcessExcel
 
     public class User
     {
-        private long registryCode;
-
-        public User(long registryCode, string email)
+        public User(long registryCode, string email, string name, string last_name)
         {
-            this.registryCode = registryCode;
-            this.email = email;
+            this.registry_code = registryCode;
+            this.email = email.Trim();
+            this.first_name = name;
+            this.last_name = last_name;
+
+            accounts_id = 25696;
+            user_groups_id = "3";
+            status = "active";
         }
 
         public long registry_code { get; set; }
+        public string first_name { get; set; }
+        public string status { get; set; }
+        public string last_name { get; set; }
         public string email { get; set; }
+
+        public long accounts_id { get; set; }
+        public string user_groups_id { get; set; }
     }
 }

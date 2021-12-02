@@ -1,12 +1,10 @@
 ﻿using ExcelDataReader;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace ProcessExcel
 {
@@ -19,9 +17,7 @@ namespace ProcessExcel
                 IExcelDataReader reader;
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
-
-
-                reader = ExcelDataReader.ExcelReaderFactory.CreateReader(stream);
+                reader = ExcelReaderFactory.CreateReader(stream);
                 var conf = new ExcelDataSetConfiguration
                 {
                     ConfigureDataTable = _ => new ExcelDataTableConfiguration
@@ -50,33 +46,14 @@ namespace ProcessExcel
             row = int.Parse(match.Groups["row"].ToString());
         }
 
-        private static void ForEachInfo(int row, System.Data.DataTable dataTable)
+        private void ForEachInfo(int row, DataTable dataTable)
         {
+            var modalImplementation = new UsuariosModalImplementation();
             for (var i = row; i < dataTable.Rows.Count; i++)
             {
                 DataRow data = dataTable.Rows[i];
-                //if (!Process(data))
-                //    data.ItemArray[2].ToString().Insert(0, "Teste");
+                var exists = modalImplementation.Process(data);
             }
-        }
-
-        private static bool Process(DataRow data)
-        {
-            long registryCode = long.Parse(data.ItemArray[2].ToString());
-            string email = data.ItemArray[3].ToString();
-
-            User user = new User(registryCode, email);
-            Console.WriteLine(registryCode);
-            Console.WriteLine(email);
-
-            ExternalServiceFacade externalService = new CoreServiceEleven();
-
-            return externalService.ProcessService(user);
-        }
-
-        public override Document Preparar(Document document)
-        {
-            return document;
         }
     }
 }

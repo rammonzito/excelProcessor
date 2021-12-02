@@ -7,6 +7,10 @@ C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug
 C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\ClientDocumentProcessor.pdb
 C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\ExcelDataReader.dll
 C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\ExcelDataReader.DataSet.dll
+C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\System.Text.Encoding.CodePages.dll
+C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Text.Encoding.CodePages.dll
 C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\ProcessExcel.dll
 C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\ProcessExcel.pdb
 C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\obj\Debug\net5.0\ClientDocumentProcessor.csproj.AssemblyReference.cache
@@ -19,6 +23,3 @@ C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\obj\Debug
 C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\obj\Debug\net5.0\ref\ClientDocumentProcessor.dll
 C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\obj\Debug\net5.0\ClientDocumentProcessor.pdb
 C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\obj\Debug\net5.0\ClientDocumentProcessor.genruntimeconfig.cache
-C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\System.Text.Encoding.CodePages.dll
-C:\Users\ramon.souza\source\repos\ProcessExcel\ClientDocumentProcessor\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Text.Encoding.CodePages.dll

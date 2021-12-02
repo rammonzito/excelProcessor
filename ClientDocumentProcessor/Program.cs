@@ -11,10 +11,10 @@ namespace ClientDocumentProcessor
         {
             Console.WriteLine("Hello World!");
             ExcelProcessor processor = new ExcelProcessor();
-            processor.Execute($"{typeof(Program).Assembly.GetDirectoryPath()}/Base Beneficio Eleven.xlsx");
+            processor.Execute($"{typeof(Program).Assembly.GetDirectoryPath()}/Base Beneficio Eleven (1).xlsx");
         }
 
-        public static string GetDirectoryPath(this Assembly assembly)
+        private static string GetDirectoryPath(this Assembly assembly)
         {
             string filePath = new Uri(assembly.CodeBase).LocalPath;
             return Path.GetDirectoryName(filePath);

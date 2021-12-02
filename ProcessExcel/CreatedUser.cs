@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProcessExcel
 {
-    public abstract class DocumentProcessor
+    public class CreatedUser
     {
-        public abstract void Execute(string path);
+        public int id { get; set; }
     }
 }

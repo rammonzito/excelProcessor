@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ProcessExcel
 {
-    public abstract class DocumentProcessor
+    public interface IData
     {
-        public abstract void Execute(string path);
+        bool Process(DataRow data);
     }
 }
