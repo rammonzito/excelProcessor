@@ -22,6 +22,8 @@ namespace ProcessExcel
                 Content = new StringContent(JsonConvert.SerializeObject(content ?? new { }, settings), Encoding.UTF8, "application/json"),
             };
 
+            request.Headers.Add("MachineKey", "DevMachineKey");
+
             using (var client = new HttpClient())
             {
                 if (!string.IsNullOrEmpty(token))

@@ -20,7 +20,7 @@ namespace ProcessExcel.Model
     {
         public int origin { get; set; } = 2; 
         public int contact_id { get; set; }
-        public int products_id { get; set; } = 3;
+        public int products_id { get; set; } = 74;
     }
 
 }

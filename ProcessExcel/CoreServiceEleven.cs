@@ -18,7 +18,7 @@ namespace ProcessExcel
         public List<string> existentCpf = new();
         public List<string> existentEmail = new();
         public List<CreatedUser> createdList = new();
-        readonly int contractId = 0;
+        readonly int contractId = 37010;
 
         public CoreServiceEleven()
         {
@@ -55,8 +55,7 @@ namespace ProcessExcel
             existentCpf.AddRange(existentEmail);
             existentCpf.ForEach(e => sb.Append($";{e}"));
 
-            File.AppendAllText($"{Assembly.GetExecutingAssembly().Location}-NotCreated.txt", sb.ToString());
-            sb.Clear();
+            MyLog.SaveLog(sb);
         }
 
         private void ProcessAll(User user)
@@ -95,7 +94,7 @@ namespace ProcessExcel
 
             try
             {
-                var relatedContract = Sender.SendAsync<object>($"{MainConstants.urlBaseBackAdmin}/{contractId}", contractRequest, HttpMethod.Post, MainConstants.token).Result;
+                var relatedContract = Sender.SendAsync<object>($"{MainConstants.urlBackBase}/{contractId}", contractRequest, HttpMethod.Post, MainConstants.token).Result;
             }
             catch (NotFoundException)
             {

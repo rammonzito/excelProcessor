@@ -2,10 +2,10 @@
 {
     public static class MainConstants
     {
-        public const string urlBaseBackAdmin = "https://backend-admin.eleven.financial/api/v1/contacts";
-        public const string urlBackBase = "https://core.eleven.financial/api/v2/contract"; 
-        public const string MachineKey = "DevMachinekey";
-        public const string token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjAxMDk2ZDRlODc5ODVhNDY5OTUxYjNlMDMyYzRjODQzN2FlMTIzYjQwY2IyMTBhMzI4ODhjOGMwNDA2MWY5M2Q5NGRjMjc3NDI0ODZjODBkIn0.eyJhdWQiOiIxIiwianRpIjoiMDEwOTZkNGU4Nzk4NWE0Njk5NTFiM2UwMzJjNGM4NDM3YWUxMjNiNDBjYjIxMGEzMjg4OGM4YzA0MDYxZjkzZDk0ZGMyNzc0MjQ4NmM4MGQiLCJpYXQiOjE2MzgzNzgxMjIsIm5iZiI6MTYzODM3ODEyMiwiZXhwIjoxNjY5OTE0MTIyLCJzdWIiOiIxODQiLCJzY29wZXMiOltdfQ.Ui1MOySdT7HGA7H0qksNlqB0te37WDxqpln0UOjq-RGkwtQFIM9xd9QcbY1evrLZ9a7NyIgTab065_GAuUOGjuj8UNek56EPPevFKQsGfoOOdhMX6c2xSM2wtyk8Y3cflAE52ovsp9bOsgEbOVXya-F9-StX3zvJuPsr8b15DiuleJkBLrX-MdgWhmfqoUcwpJgPRlBdoLUMZ1K4QUJmk5jU0UmJoGnDTShAhEpjl4k_kv43Pz12dc8rSxVRletKWCvM31AoCjiNtpY3QBUu5mtYP9B-shyFTYm82zCjatGy20mBWI3ahV13_MhH9-N5ZrHjhVKWFa6AU22RsLhNNRXdNyCS9qDAa1ykta9dFO3Co7o9jq3yh5tYKsi6_5QOvZAlyoTQr0KE6np6m3GK4iMc_Z8vfo3nuJEGtt3qQATSzep9wrMfhLFsAQ62slMzNqPGo4r08CM7xNMzBxRw144elJNUEcWSpuIgA8SmgZNAhE8m9y_vm6B-cL44eBUySs3LAaMXVmHpDTuRe1QVcOsUSWlPz_-217IXZUvjBMo9DmH3brx9-GefLBzCPBDprWuOWOeA7Cmhe0K_gIVYjWiY8yFLnkO4d9MVMBnzo4Zq22UdWJl7x9PjE3F_UkmbsM0dLI9AtGWsG8eOk8xlYGHCUCPCYDcy1Skqc7ACBMY";
+        public const string urlBaseBackAdmin = "";
+        public const string urlBackBase = ""; 
+        public const string MachineKey = "";
+        public const string token = "";
 
     }
 }
