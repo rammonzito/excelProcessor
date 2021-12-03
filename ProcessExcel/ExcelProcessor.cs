@@ -53,7 +53,6 @@ namespace ProcessExcel
 
         private void PrepareInfo(int row, DataTable dataTable)
         {
-            
             for (var i = row; i < dataTable.Rows.Count; i++)
             {
                 DataRow data = dataTable.Rows[i];

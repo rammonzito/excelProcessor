@@ -59,11 +59,11 @@ namespace ProcessExcel
             sb.Clear();
         }
 
-        private bool ProcessAll(User user)
+        private void ProcessAll(User user)
         {
             try
             {
-                createdList.Add(CreateUser(user));
+                createdList?.Add(CreateUser(user));
 
                 if (createdList?.Count > 0) {
                     RelateContract(createdList, contractId);
@@ -72,9 +72,7 @@ namespace ProcessExcel
             }
             catch (Exception)
             {
-                return false;
             }
-            return true;
         }
 
         private CreatedUser CreateUser(User user)
