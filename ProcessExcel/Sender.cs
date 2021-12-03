@@ -17,30 +17,27 @@ namespace ProcessExcel
                 Formatting = Newtonsoft.Json.Formatting.Indented
             };
 
-            var request = new HttpRequestMessage(method, $"{endpoint}");
-            request.Content = new StringContent(JsonConvert.SerializeObject(content ?? new { }, settings), Encoding.UTF8, "application/json");
+            var request = new HttpRequestMessage(method, $"{endpoint}")
+            {
+                Content = new StringContent(JsonConvert.SerializeObject(content ?? new { }, settings), Encoding.UTF8, "application/json"),
+            };
+
             using (var client = new HttpClient())
             {
                 if (!string.IsNullOrEmpty(token))
                     client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
-                try
+
+                using (var response = await client.SendAsync(request))
                 {
-                    using (var response = await client.SendAsync(request))
+                    var stringJson = await response.Content.ReadAsStringAsync();
+                    if (response.IsSuccessStatusCode)
                     {
-                        var stringJson = await response.Content.ReadAsStringAsync();
-                        if (response.IsSuccessStatusCode)
-                        {
-                            return JsonConvert.DeserializeObject<T>(stringJson);
-                        }
-                        else
-                        {
-                            throw new NotFoundException();
-                        }
+                        return JsonConvert.DeserializeObject<T>(stringJson);
                     }
-                }
-                catch (Exception ex)
-                {
-                    throw;
+                    else
+                    {
+                        throw new NotFoundException();
+                    }
                 }
             }
         }

@@ -1,58 +1,46 @@
 ﻿using Newtonsoft.Json;
+using ProcessExcel.Contants;
+using ProcessExcel.Model;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Net.Http;
+using System.Reflection;
+using System.Text;
 
 namespace ProcessExcel
 {
-    public class CoreServiceEleven : ExternalServiceFacade
+    public class CoreServiceEleven : ExternalService
     {
         public Sender Sender { get; set; }
 
-        public List<long> existentCpf = new List<long>();
-        public List<string> existentEmail = new List<string>();
+        public List<string> existentCpf = new();
+        public List<string> existentEmail = new();
+        public List<CreatedUser> createdList = new();
+        readonly int contractId = 0;
+
         public CoreServiceEleven()
         {
             Sender = new Sender();
         }
 
-        public override bool CreateContact(User user)
+        public override void ProcessService(User user)
         {
-            var json = JsonConvert.SerializeObject(user);
-            try
-            {
-                CreatedUser created = Sender.SendAsync<CreatedUser>($"{Constants.urlBase}", json, HttpMethod.Post, Constants.token).Result;
-            }
-            catch (NotFoundException)
-            {
-                return false;
-            }
-            return true;
+            if (IsValid(user))
+                ProcessAll(user);
+
+            SaveLog();
         }
 
-        public override bool ExistsContactByCpf(long cpf)
+        private void SaveLog()
         {
-            try
-            {
-                var bla = Sender.SendAsync<object>($"{Constants.urlBase}/?excludes_accounts_id=1&registry_code={cpf}", null, HttpMethod.Get, Constants.token).Result;
-            }
-            catch (NotFoundException)
-            {
-                return false;
-            }
-            return true;
-        }
+            StringBuilder sb = new StringBuilder();
+            existentCpf.AddRange(existentEmail);
+            existentCpf.ForEach(e => sb.Append(e));
 
-        public override bool ExistsContactByEmail(string email)
-        {
-            try
-            {
-                var user = Sender.SendAsync<object>($"{Constants.urlBase}/?excludes_accounts_id=1&email={email}", null, HttpMethod.Get, Constants.token).Result;
-            }
-            catch (NotFoundException)
-            {
-                return false;
-            }
-            return true;
+            File.AppendAllText($"{Assembly.GetExecutingAssembly().Location}-NotCreated.txt", sb.ToString());
+            sb.Clear();
         }
 
         public override bool IsValid(User user)
@@ -66,16 +54,101 @@ namespace ProcessExcel
             if (byEmail)
                 existentEmail.Add(user.email);
 
-
             return !(byCpf && byEmail);
         }
 
-        public override bool ProcessService(User user)
+        #region privates
+
+        private bool ProcessAll(User user)
         {
-            if (IsValid(user))
-                return CreateContact(user);
-            else
+            try
+            {
+                createdList.Add(CreateUser(user));
+
+                if (createdList?.Count > 0) {
+                    RelateContract(createdList, contractId);
+                    SendEmail(createdList.Select(u => u.id).ToList());
+                }
+            }
+            catch (Exception)
+            {
                 return false;
+            }
+            return true;
         }
+
+        private CreatedUser CreateUser(User user)
+        {
+            CreatedUser createdUser = new();
+            try
+            {
+                createdUser = Sender.SendAsync<CreatedUser>($"{MainConstants.urlBaseBackAdmin}/", user, HttpMethod.Post, MainConstants.token).Result;
+            }
+            catch (Exception)
+            {
+            }
+            return createdUser;
+        }
+
+        private bool RelateContract(List<CreatedUser> users, int contractId)
+        {
+            ContractRequest contractRequest = new();
+            users.ForEach(u => contractRequest.access.Add(new Access() { contact_id = u.id }));
+
+            try
+            {
+                var relatedContract = Sender.SendAsync<object>($"{MainConstants.urlBaseBackAdmin}/{contractId}", contractRequest, HttpMethod.Post, MainConstants.token).Result;
+            }
+            catch (NotFoundException)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool SendEmail(List<int> ids)
+        {
+            try
+            {
+                foreach (var id in ids)
+                {
+                    var sent = Sender.SendAsync<object>($"{MainConstants.urlBaseBackAdmin}/{id}/reset-password", new { }, HttpMethod.Get, MainConstants.token).Result;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool ExistsContactByCpf(string cpf)
+        {
+            try
+            {
+                var result = Sender.SendAsync<object>($"{MainConstants.urlBaseBackAdmin}/?excludes_accounts_id=1&registry_code={cpf}", null, HttpMethod.Get, MainConstants.token).Result;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool ExistsContactByEmail(string email)
+        {
+            try
+            {
+                var user = Sender.SendAsync<object>($"{MainConstants.urlBaseBackAdmin}/?excludes_accounts_id=1&email={email}", null, HttpMethod.Get, MainConstants.token).Result;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+        #endregion
     }
 }

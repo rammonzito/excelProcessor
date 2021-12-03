@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProcessExcel.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace ProcessExcel
 {
     public interface IData
     {
-        bool Process(DataRow data);
+        User Prepare(DataRow data);
+        void Process(List<User> Users);
     }
 }

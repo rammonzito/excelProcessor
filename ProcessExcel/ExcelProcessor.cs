@@ -1,5 +1,7 @@
 ﻿using ExcelDataReader;
+using ProcessExcel.Model;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -10,6 +12,8 @@ namespace ProcessExcel
 {
     public class ExcelProcessor : DocumentProcessor
     {
+        readonly UsuariosModalImplementation ModalImplementation = new();
+        readonly List<User> Users = new();
         public override void Execute(string path)
         {
             using (var stream = File.Open(path, FileMode.Open, FileAccess.ReadWrite))
@@ -26,34 +30,36 @@ namespace ProcessExcel
                     }
                 };
 
-                double col;
-                int row;
-                ConfigReading(out col, out row);
+                ConfigReading(out double col, out int row);
 
                 var dataSet = reader.AsDataSet(conf);
                 var dataTable = dataSet.Tables[0];
 
-                ForEachInfo(row, dataTable);
+                PrepareInfo(row, dataTable);
             }
+
+            ModalImplementation.Process(Users);
         }
 
+        #region privates 
         private static void ConfigReading(out double col, out int row)
         {
             var cellStr = "A1";
             var match = Regex.Match(cellStr, @"(?<col>[A-Z]+)(?<row>\d+)");
             var colStr = match.Groups["col"].ToString();
             col = colStr.Select((t, i) => (colStr[i] - 64) * Math.Pow(26, colStr.Length - i - 1)).Sum();
-            row = int.Parse(match.Groups["row"].ToString());
+            row = 0;
         }
 
-        private void ForEachInfo(int row, DataTable dataTable)
+        private void PrepareInfo(int row, DataTable dataTable)
         {
-            var modalImplementation = new UsuariosModalImplementation();
+            
             for (var i = row; i < dataTable.Rows.Count; i++)
             {
                 DataRow data = dataTable.Rows[i];
-                var exists = modalImplementation.Process(data);
+                Users.Add(ModalImplementation.Prepare(data));
             }
         }
+        #endregion
     }
 }

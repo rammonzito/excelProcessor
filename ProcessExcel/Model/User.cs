@@ -1,17 +1,14 @@
-﻿namespace ProcessExcel
-{
-    public abstract class ExternalServiceFacade
-    {
-        public abstract bool ProcessService(User user);
-        public abstract bool ExistsContactByCpf(long cpf);
-        public abstract bool ExistsContactByEmail(string email);
-        public abstract bool IsValid(User user);
-        public abstract bool CreateContact(User user);
-    }
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace ProcessExcel.Model
+{
     public class User
     {
-        public User(long registryCode, string email, string name, string last_name)
+        public User(string registryCode, string email, string name, string last_name)
         {
             this.registry_code = registryCode;
             this.email = email.Trim();
@@ -23,7 +20,7 @@
             status = "active";
         }
 
-        public long registry_code { get; set; }
+        public string registry_code { get; set; }
         public string first_name { get; set; }
         public string status { get; set; }
         public string last_name { get; set; }
