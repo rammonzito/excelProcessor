@@ -33,16 +33,7 @@ namespace ProcessExcel
             SaveLog();
         }
 
-        private void SaveLog()
-        {
-            StringBuilder sb = new StringBuilder();
-            existentCpf.AddRange(existentEmail);
-            existentCpf.ForEach(e => sb.Append(e));
-
-            File.AppendAllText($"{Assembly.GetExecutingAssembly().Location}-NotCreated.txt", sb.ToString());
-            sb.Clear();
-        }
-
+       
         public override bool IsValid(User user)
         {
             bool byCpf = ExistsContactByCpf(user.registry_code);
@@ -58,6 +49,15 @@ namespace ProcessExcel
         }
 
         #region privates
+        private void SaveLog()
+        {
+            StringBuilder sb = new StringBuilder();
+            existentCpf.AddRange(existentEmail);
+            existentCpf.ForEach(e => sb.Append($";{e}"));
+
+            File.AppendAllText($"{Assembly.GetExecutingAssembly().Location}-NotCreated.txt", sb.ToString());
+            sb.Clear();
+        }
 
         private bool ProcessAll(User user)
         {
