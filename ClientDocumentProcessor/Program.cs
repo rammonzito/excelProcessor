@@ -1,4 +1,5 @@
 ﻿using ProcessExcel;
+using ProcessExcel.Contants;
 using System;
 using System.IO;
 using System.Reflection;
@@ -11,7 +12,7 @@ namespace ClientDocumentProcessor
         {
             Console.WriteLine("Hello World!");
             ExcelProcessor processor = new ExcelProcessor();
-            processor.Execute($"{typeof(Program).Assembly.GetDirectoryPath()}/Base Beneficio Eleven (1).xlsx");
+            processor.Execute($"{typeof(Program).Assembly.GetDirectoryPath()}/{MainConstants.FileName}");
         }
 
         private static string GetDirectoryPath(this Assembly assembly)

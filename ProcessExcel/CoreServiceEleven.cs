@@ -18,7 +18,7 @@ namespace ProcessExcel
         public List<string> existentCpf = new();
         public List<string> existentEmail = new();
         public List<CreatedUser> createdList = new();
-        readonly int contractId = 37010;
+        readonly int contractId = MainConstants.ContractId;
 
         public CoreServiceEleven()
         {
@@ -64,9 +64,10 @@ namespace ProcessExcel
             {
                 createdList?.Add(CreateUser(user));
 
-                if (createdList?.Count > 0) {
+                if (createdList?.Count > 0)
+                {
                     RelateContract(createdList, contractId);
-                    SendEmail(createdList.Select(u => u.id).ToList());
+                    SendEmail(createdList.Select(u => u.global_id).ToList());
                 }
             }
             catch (Exception)

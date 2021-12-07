@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProcessExcel.Contants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,8 +16,8 @@ namespace ProcessExcel.Model
             this.first_name = name;
             this.last_name = last_name;
 
-            accounts_id = 25696;
-            user_groups_id = "3";
+            accounts_id = MainConstants.accountsId;
+            user_groups_id = MainConstants.userGroupsId;
             status = "active";
         }
 

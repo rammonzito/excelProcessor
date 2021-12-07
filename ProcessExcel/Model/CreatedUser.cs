@@ -8,6 +8,7 @@ namespace ProcessExcel.Model
 {
     public class CreatedUser
     {
+        public int global_id { get; set; }
         public int id { get; set; }
     }
 }
