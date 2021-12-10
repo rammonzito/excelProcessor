@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UljwrNEQn+9R29jY5alH1k9Pev/mEtZLFZwgEMzKUE4xhDvpCD8yBZ10TvK5yLi0+orDKpiyCq99UJ1jQ1klHQ==",
+  "dgSpecHash": "V1khgq+UGWP3LsI8OuwdjNw+ChYjWNae0GZqKk1p7vlF5cdjRXK1kLhXuHyn5+OHZlK8sO0ZZZIJM5WZ/BO3WA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ramon.souza\\source\\repos\\ProcessExcel\\ProcessExcel\\ProcessExcel.csproj",
+  "projectFilePath": "C:\\www\\WP\\excelProcessor\\ProcessExcel\\ProcessExcel.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ramon.souza\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
-    "C:\\Users\\ramon.souza\\.nuget\\packages\\exceldatareader.dataset\\3.6.0\\exceldatareader.dataset.3.6.0.nupkg.sha512",
-    "C:\\Users\\ramon.souza\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\rafael.azevedo\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
+    "C:\\Users\\rafael.azevedo\\.nuget\\packages\\exceldatareader.dataset\\3.6.0\\exceldatareader.dataset.3.6.0.nupkg.sha512",
+    "C:\\Users\\rafael.azevedo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

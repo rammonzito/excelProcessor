@@ -16,8 +16,8 @@ namespace ProcessExcel
 
         public void Process(List<User> Users)
         {
-            foreach (var user in Users)
-                externalService.ProcessService(user);
+            // foreach (var user in Users)
+            externalService.ProcessService(Users);
         }
 
         #region privates

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ramon.souza\\source\\repos\\ProcessExcel\\ProcessExcel\\ProcessExcel.csproj": {}
+    "C:\\www\\WP\\excelProcessor\\ProcessExcel\\ProcessExcel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ramon.souza\\source\\repos\\ProcessExcel\\ProcessExcel\\ProcessExcel.csproj": {
+    "C:\\www\\WP\\excelProcessor\\ProcessExcel\\ProcessExcel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ramon.souza\\source\\repos\\ProcessExcel\\ProcessExcel\\ProcessExcel.csproj",
+        "projectUniqueName": "C:\\www\\WP\\excelProcessor\\ProcessExcel\\ProcessExcel.csproj",
         "projectName": "ProcessExcel",
-        "projectPath": "C:\\Users\\ramon.souza\\source\\repos\\ProcessExcel\\ProcessExcel\\ProcessExcel.csproj",
-        "packagesPath": "C:\\Users\\ramon.souza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ramon.souza\\source\\repos\\ProcessExcel\\ProcessExcel\\obj\\",
+        "projectPath": "C:\\www\\WP\\excelProcessor\\ProcessExcel\\ProcessExcel.csproj",
+        "packagesPath": "C:\\Users\\rafael.azevedo\\.nuget\\packages\\",
+        "outputPath": "C:\\www\\WP\\excelProcessor\\ProcessExcel\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ramon.souza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rafael.azevedo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,10 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/elevenfinancial/_packaging/11Libs/nuget/v3/index.json": {},
-          "https://pkgs.dev.azure.com/elevenfinancial/_packaging/11Services%40Local/nuget/v3/index.json": {},
-          "https://pkgs.dev.azure.com/elevenfinancial/_packaging/11Services/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {

@@ -25,16 +25,18 @@ namespace ProcessExcel
             Sender = new Sender();
         }
 
-        public override void ProcessService(User user)
+        public override void ProcessService(List<User> users)
         {
-            if (IsValid(user))
-                ProcessAll(user);
+            //foreach (var user in users)
+            //    CheckIdValid(user);
+
+            ProcessAll(users);
 
             SaveLog();
         }
 
        
-        public override bool IsValid(User user)
+        public override void CheckIdValid(User user)
         {
             bool byCpf = ExistsContactByCpf(user.registry_code);
             bool byEmail = ExistsContactByEmail(user.email);
@@ -45,7 +47,7 @@ namespace ProcessExcel
             if (byEmail)
                 existentEmail.Add(user.email);
 
-            return !(byCpf && byEmail);
+            user.Valid = !byCpf && !byEmail;
         }
 
         #region privates
@@ -53,21 +55,26 @@ namespace ProcessExcel
         {
             StringBuilder sb = new StringBuilder();
             existentCpf.AddRange(existentEmail);
-            existentCpf.ForEach(e => sb.Append($";{e}"));
+            existentCpf.ForEach(e => sb.AppendLine($"Conta já existente: {e}"));
 
             MyLog.SaveLog(sb);
         }
 
-        private void ProcessAll(User user)
+        private void ProcessAll(List<User> users)
         {
             try
             {
-                createdList?.Add(CreateUser(user));
+                foreach (var user in users?.Where(u => u.Valid))
+                {
+                    var created = CreateUser(user);
+                    if (created != null)
+                        createdList?.Add(created);
+                }
 
                 if (createdList?.Count > 0)
                 {
                     RelateContract(createdList, contractId);
-                    SendEmail(createdList.Select(u => u.global_id).ToList());
+                    createdList?.ForEach(u => SendEmail(u.global_id));
                 }
             }
             catch (Exception)
@@ -77,13 +84,14 @@ namespace ProcessExcel
 
         private CreatedUser CreateUser(User user)
         {
-            CreatedUser createdUser = new();
+            CreatedUser createdUser = null;
             try
             {
                 createdUser = Sender.SendAsync<CreatedUser>($"{MainConstants.urlBaseBackAdmin}/", user, HttpMethod.Post, MainConstants.token).Result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                SaveLog($"Não consegui criar com o user {user.ToString()}");
             }
             return createdUser;
         }
@@ -104,14 +112,11 @@ namespace ProcessExcel
             return true;
         }
 
-        private bool SendEmail(List<int> ids)
+        private bool SendEmail(int id)
         {
             try
             {
-                foreach (var id in ids)
-                {
-                    var sent = Sender.SendAsync<object>($"{MainConstants.urlBaseBackAdmin}/{id}/reset-password", new { }, HttpMethod.Get, MainConstants.token).Result;
-                }
+                var sent = Sender.SendAsync<object>($"{MainConstants.urlBaseBackAdmin}/{id}/reset-password", new { }, HttpMethod.Get, MainConstants.token).Result;
             }
             catch (Exception)
             {
@@ -126,7 +131,7 @@ namespace ProcessExcel
             {
                 var result = Sender.SendAsync<object>($"{MainConstants.urlBaseBackAdmin}/?excludes_accounts_id=1&registry_code={cpf}", null, HttpMethod.Get, MainConstants.token).Result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -139,11 +144,18 @@ namespace ProcessExcel
             {
                 var user = Sender.SendAsync<object>($"{MainConstants.urlBaseBackAdmin}/?excludes_accounts_id=1&email={email}", null, HttpMethod.Get, MainConstants.token).Result;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
             return true;
+        }
+
+        private void SaveLog(string erro)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(erro);
+            MyLog.SaveLog(sb);
         }
 
 

@@ -10,3 +10,15 @@ C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\Pro
 C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\ref\ProcessExcel.dll
 C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\ProcessExcel.pdb
 C:\Users\ramon.souza\source\repos\ProcessExcel\ProcessExcel\obj\Debug\net5.0\ProcessExcel.csproj.AssemblyReference.cache
+C:\www\WP\excelProcessor\ProcessExcel\bin\Debug\net5.0\ProcessExcel.deps.json
+C:\www\WP\excelProcessor\ProcessExcel\bin\Debug\net5.0\ProcessExcel.dll
+C:\www\WP\excelProcessor\ProcessExcel\bin\Debug\net5.0\ref\ProcessExcel.dll
+C:\www\WP\excelProcessor\ProcessExcel\bin\Debug\net5.0\ProcessExcel.pdb
+C:\www\WP\excelProcessor\ProcessExcel\obj\Debug\net5.0\ProcessExcel.csproj.AssemblyReference.cache
+C:\www\WP\excelProcessor\ProcessExcel\obj\Debug\net5.0\ProcessExcel.GeneratedMSBuildEditorConfig.editorconfig
+C:\www\WP\excelProcessor\ProcessExcel\obj\Debug\net5.0\ProcessExcel.AssemblyInfoInputs.cache
+C:\www\WP\excelProcessor\ProcessExcel\obj\Debug\net5.0\ProcessExcel.AssemblyInfo.cs
+C:\www\WP\excelProcessor\ProcessExcel\obj\Debug\net5.0\ProcessExcel.csproj.CoreCompileInputs.cache
+C:\www\WP\excelProcessor\ProcessExcel\obj\Debug\net5.0\ProcessExcel.dll
+C:\www\WP\excelProcessor\ProcessExcel\obj\Debug\net5.0\ref\ProcessExcel.dll
+C:\www\WP\excelProcessor\ProcessExcel\obj\Debug\net5.0\ProcessExcel.pdb

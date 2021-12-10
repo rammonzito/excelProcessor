@@ -29,5 +29,11 @@ namespace ProcessExcel.Model
 
         public long accounts_id { get; set; }
         public string user_groups_id { get; set; }
+        public bool Valid { get; set; } = true;
+
+        public override string ToString()
+        {
+            return $"CPF: {registry_code}; firstname: {first_name}; email: {email};";
+        }
     }
 }
